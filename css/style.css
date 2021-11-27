@@ -1,0 +1,180 @@
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hero {
+    width: 100%;
+    height: max-content;
+}
+
+.logo {
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: black;
+    transform: scale(1.05);
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+
+/*
+.logo:hover {
+    padding: 5px;
+    border-radius: 10px;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1), 0 4px 8px rgba(0, 0, 0, 1);
+    border-bottom: 2px solid white;
+    color: black;
+    transition: 0.5s ease;
+    text-decoration: none;
+}*/
+
+.navigation-link {
+    border: 2px solid transparent;
+    text-align: center;
+    padding: 5px;
+    padding-inline: 25px;
+    font-weight: bold;
+    color: white;
+    width: auto;
+}
+
+.navigation-link:hover {
+    text-decoration: none;
+    height: auto;
+    font-size: auto;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid white;
+    transition: 0.25s ease;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination li a {
+    margin: 1px;
+    border-radius: 10%;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination li a:hover {
+    background-color: gray;
+    border: black solid 1px;
+}
+
+.message {
+    border-radius: 50%;
+}
+
+.container.login-form {
+    width: auto;
+    position: relative;
+    top: 50px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5%;
+}
+
+.container.signup-form {
+    width: auto;
+    position: relative;
+    top: 50px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5%;
+}
+
+.foot {
+    display: fixed;
+    position: static;
+    margin-top: 100px;
+    font-size: 10px;
+    width: auto;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.goals {
+    /* Location of the image */
+    /* Image is centered vertically and horizontally at all times */
+    /* Image doesn't repeat */
+    background-repeat: no-repeat;
+    /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+    /* This is what makes the background image rescale based on its container's size */
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: fit-content;
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    background-color: transparent;
+    /* SHORTHAND CSS NOTATION
+   * background: url(background-photo.jpg) center center cover no-repeat fixed;
+   */
+}
+
+.card {
+    border: transparent;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+    min-height: 500px;
+    max-height: max-content;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1), 0 4px 8px rgba(0, 0, 0, 1);
+    transition: 1s ease;
+}
+
+.small-box {
+    border-radius: 5%;
+}
+
+.charts {
+    text-decoration: none;
+    color: white;
+}
+
+.charts:hover {
+    color: white;
+}
+
+.queue{
+    border: solid black;
+    height: auto;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
