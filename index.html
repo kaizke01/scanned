@@ -74,6 +74,9 @@
                                 <h1>Scan the QR Code</h1>
                                 <video id="preview" width="100%"></video>
                                 <center>
+                                    <a class="btn btn-danger mt-5" onclick="change_cam">
+                                        Change Camera
+                                    </a>
                                     <a class="btn btn-danger mt-5" href="https://kkl-system.000webhostapp.com/dashboard/">
                                         Cancel
                                     </a>
@@ -95,6 +98,16 @@
 <script>
     let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
 
+    function change_cam(){
+        if(scanner.start(cameras[1]))
+        {
+            scanner.start(cameras[0]);
+        }
+        else{
+            scanner.start(cameras[1]);
+        }
+    }
+    
     Instascan.Camera.getCameras().then(function(cameras){
     if(cameras.length > 0 ){
         if(cameras[1])
