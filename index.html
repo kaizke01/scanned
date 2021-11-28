@@ -99,13 +99,13 @@
     var cam = 0;
 
     function change_cam(){
-        if(cam == 0)
+        if(cam == 1)
         {
             Instascan.Camera.getCameras().then(function(cameras){
             if(cameras.length > 0 ){
 
                     scanner.start(cameras[1]);
-                    cam = 1;
+                    cam = 0;
                 
             } else{
                 alert('No cameras found');
@@ -120,7 +120,7 @@
             if(cameras.length > 0 ){
                 
                     scanner.start(cameras[0]);
-                    cam = 0;
+                    cam = 1;
                 
             } else{
                 alert('No cameras found');
