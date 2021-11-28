@@ -97,9 +97,10 @@
 
 <script>
     let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
-
+    var cam = 0;
+    
     function change_cam(){
-        if(scanner.start(cameras[1]))
+        if(cam == 0)
         {
             scanner.start(cameras[0]);
         }
@@ -113,11 +114,13 @@
         if(cameras[1])
         {
             scanner.start(cameras[1]);
+            cam = 0;
             console.log('camera 1');
         }
         else
         {
             scanner.start(cameras[0]);
+            cam = 1;
             console.log('camera 0');
         }
         
