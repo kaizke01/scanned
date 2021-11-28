@@ -31,7 +31,6 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Menu</div>
                     <div class="list-group list-group-flush">
-
                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost/kkl/dashboard/">ATM Queue</a>
                         <li class="dropdown list-group-item list-group-item-action list-group-item-dark p-3">
                                         <a href="#" class="text-white dropdown-toggle" data-toggle="dropdown">Appointment Requests</a>
@@ -51,7 +50,6 @@
                         
                     </div>
             </div>
-
             Sidebar-->
 
             <!-- Page content wrapper-->
@@ -74,7 +72,8 @@
                                 <h1>Scan the QR Code</h1>
                                 <video id="preview" width="100%"></video>
                                 <center>
-                                    <a class="btn btn-info mt-5" onclick="change_cam">
+                                    
+                                    <a class="btn btn-info mt-5" href="https://kkl-system.000webhostapp.com/dashboard/">
                                         Change Camera
                                     </a>
                                     <a class="btn btn-danger mt-5" href="https://kkl-system.000webhostapp.com/dashboard/">
@@ -98,30 +97,50 @@
 <script>
     let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
     var cam = 0;
-    
+
     function change_cam(){
         if(cam == 0)
         {
-            scanner.start(cameras[0]);
+            Instascan.Camera.getCameras().then(function(cameras){
+            if(cameras.length > 0 ){
+
+                    scanner.start(cameras[1]);
+                    cam = 1;
+                
+            } else{
+                alert('No cameras found');
+            }
+                    
+            }).catch(function(e) {
+                console.error(e);
+            });
         }
         else{
-            scanner.start(cameras[1]);
+            Instascan.Camera.getCameras().then(function(cameras){
+            if(cameras.length > 0 ){
+                
+                    scanner.start(cameras[0]);
+                    cam = 0;
+                
+            } else{
+                alert('No cameras found');
+            }
+                    
+            }).catch(function(e) {
+                console.error(e);
+            });
         }
     }
-    
+
     Instascan.Camera.getCameras().then(function(cameras){
     if(cameras.length > 0 ){
         if(cameras[1])
         {
             scanner.start(cameras[1]);
-            cam = 0;
-            console.log('camera 1');
         }
         else
         {
             scanner.start(cameras[0]);
-            cam = 1;
-            console.log('camera 0');
         }
         
     } else{
